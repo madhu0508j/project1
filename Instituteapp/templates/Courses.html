@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses - Bright Future Coaching Institute</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+        body { background:#f9f9f9; color:#333; scroll-behavior: smooth; }
+
+        header { background:#0d1b2a; color:white; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:24px; font-weight:bold; }
+        nav ul { list-style:none; display:flex; }
+        nav ul li { margin-left:25px; }
+        nav ul li a { color:white; text-decoration:none; transition:0.3s; }
+        nav ul li a:hover { color:#00b4d8; }
+
+        .hero { 
+            height:40vh; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600'); 
+            background-size:cover; 
+            background-position:center; 
+            display:flex; 
+            align-items:center; 
+            justify-content:center; 
+            text-align:center; 
+            color:white; 
+        }
+        .hero h1 { font-size:42px; }
+        .hero p { font-size:20px; margin-top:10px; }
+
+        section { padding:60px 50px; }
+        h2 { font-size:36px; color:#0d1b2a; text-align:center; margin-bottom:40px; }
+
+        .courses-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+        .course-card { background:white; width:300px; border-radius:12px; padding:25px; box-shadow:0 5px 20px rgba(0,0,0,0.1); transition:0.3s; text-align:center; opacity:0; transform:translateY(50px);}
+        .course-card img { width:100%; border-radius:12px; margin-bottom:15px; }
+        .course-card h3 { color:#0077b6; margin-bottom:10px; }
+        .course-card p { font-size:16px; line-height:1.5; margin-bottom:15px; }
+        .price { font-size:20px; font-weight:bold; color:#00b4d8; margin-bottom:15px; }
+        .enroll-btn { padding:10px 20px; background:#0077b6; color:white; border:none; border-radius:8px; cursor:pointer; font-size:16px; transition:0.3s; text-decoration:none; display:inline-block; }
+        .enroll-btn:hover { background:#005f87; transform:scale(1.05); }
+
+        footer { background:#0d1b2a; color:white; text-align:center; padding:15px; margin-top:50px; }
+
+        @media(max-width:768px){
+            header { flex-direction:column; }
+            .hero h1 { font-size:32px; }
+            .hero p { font-size:16px; }
+            section { padding:40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Bright Future</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index'%}">Home</a></li>
+            <li><a href="{% url 'courses'%}">Courses</a></li>
+            <li><a href="{% url 'admission'%}">Admission</a></li>
+            <li><a href="{% url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Our Courses</h1>
+        <p>Choose the right course for your goals and start learning today!</p>
+    </div>
+</section>
+
+<section>
+    <h2>Available Courses</h2>
+    <div class="courses-container">
+        <!-- Mathematics Mastery -->
+        <div class="course-card">
+            <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400" alt="Mathematics Course">
+            <h3>Mathematics Mastery</h3>
+            <p>Learn from basics to advanced topics with weekly practice and doubt clearing sessions.</p>
+            <div class="price">₹4,999</div>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+
+        <!-- Science Excellence -->
+        <div class="course-card">
+            <img src="https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400" alt="Science Course">
+            <h3>Science Excellence</h3>
+            <p>Interactive science classes with experiments and conceptual clarity for top performance.</p>
+            <div class="price">₹5,499</div>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+
+        <!-- English Communication -->
+        <div class="course-card">
+            <img src="https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400" alt="English Course">
+            <h3>English Communication</h3>
+            <p>Improve your reading, writing, and speaking skills with practical exercises and guidance.</p>
+            <div class="price">₹3,999</div>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+
+        <!-- Exam Preparation -->
+        <div class="course-card">
+           <img src="https://images.pexels.com/photos/4145192/pexels-photo-4145192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400" alt="Students Studying for Exams">
+            <h3>Exam Preparation</h3>
+            <p>Focused strategies, practice tests, and tips to help you score top marks in your examinations.</p>
+            <div class="price">₹6,499</div>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Bright Future Coaching Institute | All Rights Reserved</p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.course-card').forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

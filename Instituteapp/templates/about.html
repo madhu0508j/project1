@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Bright Future Coaching Institute</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+        body { line-height:1.6; background:#f9f9f9; scroll-behavior: smooth; }
+
+        header { background:#0d1b2a; color:white; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:24px; font-weight:bold; }
+        nav ul { list-style:none; display:flex; }
+        nav ul li { margin-left:25px; }
+        nav ul li a { color:white; text-decoration:none; transition:0.3s; }
+        nav ul li a:hover { color:#00b4d8; }
+
+        .hero { 
+            height:70vh; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600'); 
+            background-size:cover; 
+            background-position:center; 
+            display:flex; 
+            align-items:center; 
+            justify-content:center; 
+            text-align:center; 
+            color:white; 
+        }
+        .hero h1 { font-size:48px; margin-bottom:15px; }
+        .hero p { font-size:22px; max-width:700px; margin:auto; }
+
+        section { padding:60px 50px; text-align:center; }
+        h2 { font-size:38px; color:#0d1b2a; margin-bottom:25px; }
+
+        .about-content, .features-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px; }
+        .about-card, .feature-card { background:white; border-radius:12px; width:300px; padding:25px; transition:0.5s; cursor:pointer; text-align:center; opacity:0; transform: translateY(50px); }
+        .about-card img, .feature-card img { width:100%; border-radius:12px; margin-bottom:15px; }
+        .about-card h3, .feature-card h3 { color:#0077b6; margin-bottom:12px; }
+        .about-card p, .feature-card p { color:#333; font-size:16px; line-height:1.5; }
+        .about-card:hover, .feature-card:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
+
+        .statistics { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:50px; }
+        .stat { background:#0077b6; color:white; padding:25px; border-radius:12px; width:180px; opacity:0; transform: translateY(50px); transition:0.5s; }
+        .stat h3 { font-size:36px; }
+        .stat p { margin-top:5px; font-size:18px; }
+
+        footer { background:#0d1b2a; color:white; text-align:center; padding:15px; margin-top:50px; }
+
+        @media(max-width:768px){
+            header { flex-direction:column; }
+            .hero h1 { font-size:32px; }
+            .hero p { font-size:18px; }
+            section { padding:40px 20px; }
+            .statistics { flex-direction:column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Bright Future</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index'%}">Home</a></li>
+            <li><a href="{% url 'courses'%}">Courses</a></li>
+            <li><a href="{% url 'admission'%}">Admission</a></li>
+            <li><a href="{% url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Bright Future Coaching Institute</h1>
+        <p>We help students learn better, score higher, and build a bright future with expert guidance and personal support.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Our Mission & Vision</h2>
+    <p>Our mission is to provide quality education in a friendly and supportive environment. We focus on clear concepts, regular practice, and personal guidance so that every student can achieve success in exams and in life.</p>
+</section>
+
+<section>
+    <h2>Why Choose Us</h2>
+    <div class="about-content">
+        <div class="about-card">
+            <img src="https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Experienced Faculty</h3>
+            <p>Our teachers are experienced, supportive, and dedicated to helping students understand every topic clearly and confidently.</p>
+        </div>
+
+        <div class="about-card">
+            <img src="https://images.pexels.com/photos/4145199/pexels-photo-4145199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Smart Classrooms</h3>
+            <p>We use modern teaching tools and smart classrooms to make learning easy, interactive, and interesting for students.</p>
+        </div>
+
+        <div class="about-card">
+            <img src="https://images.pexels.com/photos/4145192/pexels-photo-4145192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Personal Mentorship</h3>
+            <p>We provide personal attention and regular guidance to help students improve their performance and stay motivated.</p>
+        </div>
+
+        <div class="about-card">
+            <img src="https://images.pexels.com/photos/4145198/pexels-photo-4145198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Proven Results</h3>
+            <p>Our students consistently achieve excellent results and top scores in their exams.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Our Key Features</h2>
+    <div class="features-container">
+        <div class="feature-card">
+            <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Weekly Tests</h3>
+            <p>We conduct weekly tests to check progress, improve weak areas, and build exam confidence.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="https://images.pexels.com/photos/4145193/pexels-photo-4145193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Interactive Learning</h3>
+            <p>Interactive teaching methods encourage students to ask questions and understand concepts better.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="https://images.pexels.com/photos/4145194/pexels-photo-4145194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Career Guidance</h3>
+            <p>We guide students in choosing the right career path based on their interests and strengths.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="https://images.pexels.com/photos/5905711/pexels-photo-5905711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=400">
+            <h3>Exam Strategies</h3>
+            <p>We teach smart study techniques, time management skills, and exam strategies to help students score higher.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Our Achievements</h2>
+    <div class="statistics">
+        <div class="stat">
+            <h3 class="counter" data-target="1200">0</h3>
+            <p>Students Enrolled</p>
+        </div>
+        <div class="stat">
+            <h3 class="counter" data-target="50">0</h3>
+            <p>Expert Teachers</p>
+        </div>
+        <div class="stat">
+            <h3 class="counter" data-target="98">0</h3>
+            <p>Success Rate %</p>
+        </div>
+        <div class="stat">
+            <h3 class="counter" data-target="10">0</h3>
+            <p>Years of Excellence</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Bright Future Coaching Institute | All Rights Reserved</p>
+</footer>
+
+<script>
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+        counter.innerText = '0';
+        const updateCounter = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / 100;
+            if(count < target){
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCounter, 20);
+            }
+        }
+        updateCounter();
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.about-card, .feature-card, .stat').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
