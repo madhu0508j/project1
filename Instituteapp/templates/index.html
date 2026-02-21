@@ -89,7 +89,7 @@
             <li><a href="{% url 'index'%}">Home</a></li>
             <li><a href="{% url 'about'%}">About</a></li>
             <li><a href="{% url 'courses'%}">Courses</a></li>
-            <li><a href="{% url 'admission' %}">Admission</a></li>
+            <li><a href="{% url 'admissionn' %}">Admission</a></li>
             <li><a href="{% url 'contact'%}">Contact</a></li>
         </ul>
     </nav>
@@ -181,6 +181,7 @@
 <section class="admission" id="admission">
     <h2>Admission Form</h2>
     <form>
+        {% csrf_token %}
         <input type="text" placeholder="Student Name" required>
         <input type="email" placeholder="Email Address" required>
         <input type="text" placeholder="Phone Number" required>

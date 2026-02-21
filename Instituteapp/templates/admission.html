@@ -118,7 +118,7 @@
         <ul>
             <li><a href="{% url 'index'%}">Home</a></li>
             <li><a href="{% url 'courses'%}">Courses</a></li>
-            <li><a href="{% url 'admission' %}">Admission</a></li>
+            <li><a href="{% url 'admissionn' %}">Admission</a></li>
             <li><a href="{% url 'contact'%}">Contact</a></li>
         </ul>
     </nav>
@@ -134,8 +134,8 @@
 <section>
     <h2>Apply Now</h2>
     <div class="admission-form">
-        <form action="#" method="POST">
-            {% csrf_token %}
+        <form action="{% url 'admission'%}" method="POST" >
+           {% csrf_token %}
             <div class="input-card">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -167,7 +167,7 @@
                 <textarea id="message" name="message" rows="4" placeholder="Any specific queries or requests"></textarea>
             </div>
 
-            <button type="submit">Submit Application</button>
+            <button type="submit" name="ADMIN" value="ADMIN">Submit Application</button>
         </form>
     </div>
 </section>

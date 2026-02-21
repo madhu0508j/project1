@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from Instituteapp.models import Contact,Admission
 
 # Create your views here.
 
@@ -11,7 +12,7 @@ def about(request):
 def Course(request):
     return render(request,'Courses.html')
 
-def admission(request):
+def admission1(request):
     return render(request,'admission.html')
 
 def contact(request):
@@ -25,3 +26,33 @@ def refund(request):
 
 def terms(request):
     return render(request,'terms.html')
+
+
+def admission(request):
+    if request.method=='POST':
+        if request.POST.get('ADMIN')=='ADMIN':
+          name=request.POST.get('name')
+          email=request.POST.get('email')
+          phone=request.POST.get('phone')
+          course=request.POST.get('course')
+          message=request.POST.get('message')
+          Admission.objects.create(name=name,email=email,phone=phone,course=course,message=message)
+          return redirect('admission')
+    
+    return render(request,'admission.html')
+
+
+def Contactus(request):
+    if request.method=='POST':
+        if request.POST.get('CONTACT')=='CONTACT':
+         name=request.POST.get('name')
+         email=request.POST.get('email')
+         phone=request.POST.get('phone')
+         message=request.POST.get('message')
+
+         Contact.objects.create(name=name,email=email,phone=phone,message=message)
+
+         return redirect('Contactus')
+    
+    return render(request,'contact.html')
+    
