@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | Bright Future Coaching Institute</title>
+<title>Refund Policy | Bright Future Coaching Institute</title>
 <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
     body { background:#f4f6f8; color:#333; line-height:1.7; }
@@ -15,7 +15,7 @@
         display:flex;
         justify-content:space-between;
         align-items:center;
-        padding:8px 30px; /* extra compact */
+        padding:8px 30px;
         position:sticky;
         top:0;
         z-index:1000;
@@ -27,19 +27,18 @@
     nav ul {
         list-style:none;
         display:flex;
-        gap:10px; /* reduced gap */
+        gap:10px;
     }
     nav ul li a {
         color:white;
         text-decoration:none;
         font-weight:bold;
-        padding:5px 12px; /* reduced padding */
+        padding:5px 12px;
         border-radius:6px;
         transition:all 0.3s ease;
         position:relative;
         font-size:14px;
     }
-    /* Hover underline effect */
     nav ul li a::after {
         content:"";
         position:absolute;
@@ -50,19 +49,9 @@
         transition:0.3s;
     }
     nav ul li a:hover::after { width:100%; }
-    nav ul li a:hover {
-        background:rgba(0,180,216,0.1);
-        color:#00b4d8;
-        transform:translateY(-1px);
-    }
+    nav ul li a:hover { background:rgba(0,180,216,0.1); color:#00b4d8; transform:translateY(-1px); }
+    nav ul li a.active { background:#0077b6; color:white; box-shadow:0 3px 8px rgba(0,119,182,0.4); }
 
-    nav ul li a.active {
-        background:#0077b6;
-        color:white;
-        box-shadow:0 3px 8px rgba(0,119,182,0.4);
-    }
-
-    /* Main Section */
     main {
         max-width:900px;
         margin:50px auto;
@@ -71,22 +60,14 @@
         border-radius:10px;
         box-shadow:0 6px 20px rgba(0,0,0,0.07);
     }
-    main h2 {
-        color:#0077b6;
-        font-size:28px;
-        margin-bottom:20px;
-        border-bottom:3px solid #00b4d8;
-        padding-bottom:6px;
-    }
+    main h2 { color:#0077b6; font-size:28px; margin-bottom:20px; border-bottom:3px solid #00b4d8; padding-bottom:6px; }
     main p { margin-bottom:16px; font-size:16px; line-height:1.7; color:#444; }
     main p span { font-weight:bold; color:#0d1b2a; }
     main a { color:#00b4d8; text-decoration:underline; transition:0.3s; }
     main a:hover { color:#0077b6; }
 
-    /* Footer */
     footer { background:#0d1b2a; color:white; padding:20px 15px; text-align:center; margin-top:40px; font-size:14px; }
 
-    /* Responsive */
     @media(max-width:768px){
         header { flex-direction:column; align-items:flex-start; padding:10px 15px; }
         nav ul { flex-direction:column; width:100%; gap:6px; margin-top:8px; }
@@ -101,33 +82,26 @@
     <div class="logo">Bright Future Coaching Institute</div>
     <nav>
         <ul>
-         
-           
+          <li><a href=" {% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'admission' %}">Admission</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
             <li><a href="{% url 'refund' %}">Refund Policy</a></li>
             <li><a href="{% url 'policy' %}" class="active">Privacy Policy</a></li>
             <li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
-             <ul>
-            <li><a href="{% url 'index'%}">Home</a></li>
-         
-            <li><a href="{% url 'admission' %}">Admission</a></li>
-            <li><a href="{% url 'contact'%}">Contact</a></li>
-        </ul>
         </ul>
     </nav>
 </header>
 
 <main>
-    <h2>Privacy Policy</h2>
+    <h2>Refund Policy</h2>
 
-    <p>At <span>Bright Future Coaching Institute</span>, we highly value the trust our students and parents place in us. We collect only the essential personal information required to provide quality educational services and to ensure a seamless experience.</p>
+    <p>At <span>Bright Future Coaching Institute</span>, we are committed to providing high-quality coaching and ensuring satisfaction for all students. We understand that sometimes circumstances may require a refund, and we handle these requests professionally.</p>
 
-    <p>We respect your privacy. Your personal data is used exclusively for educational purposes, communication, and improving our institute's services. <span>We never sell or share your information with third parties without your explicit consent.</span></p>
+    <p>Refund requests must be submitted within <span>7 days of enrollment</span>. All requests are reviewed carefully, and processed within 5 business days. Refunds may be <span>partial or full</span> depending on the course, materials, or services utilized.</p>
 
-    <p>Our website uses cookies and similar technologies to enhance user experience, monitor traffic, and provide tailored content based on your preferences. You have full control to manage or disable cookies at any time through your browser settings.</p>
+    <p>To request a refund, please contact our support team via <a href="{%  url 'contact' %}">Contact Page</a> or email. We strive to respond promptly and assist you in a transparent and fair manner.</p>
 
-    <p>We constantly review and update our privacy policies to comply with latest regulations and maintain high standards of data protection. By interacting with our website and institute, you can trust that your personal information is handled with utmost care, professionalism, and integrity.</p>
-
-    <p>For any questions regarding our privacy practices, please feel free to <a href="{% url  'contact' %}">contact us</a>. Your trust and confidence in our institute are our top priorities.</p>
+    <p>Our policies are designed to maintain trust and provide a professional experience. By enrolling, you agree to these terms while we ensure your satisfaction and learning success remain our top priorities.</p>
 </main>
 
 <footer>

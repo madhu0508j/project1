@@ -43,7 +43,16 @@
         .enroll-btn { padding:10px 20px; background:#0077b6; color:white; border:none; border-radius:8px; cursor:pointer; font-size:16px; transition:0.3s; text-decoration:none; display:inline-block; }
         .enroll-btn:hover { background:#005f87; transform:scale(1.05); }
 
-        footer { background:#0d1b2a; color:white; text-align:center; padding:15px; margin-top:50px; }
+        footer { 
+            background:#0d1b2a; 
+            color:white; 
+            text-align:center; 
+            padding:20px 15px; 
+            margin-top:50px; 
+            font-size:14px;
+        }
+        footer a { color:#00b4d8; text-decoration:none; margin: 0 8px; transition:0.3s; }
+        footer a:hover { color:#ffffff; }
 
         @media(max-width:768px){
             header { flex-direction:column; }
@@ -117,6 +126,10 @@
 
 <footer>
     <p>© 2026 Bright Future Coaching Institute | All Rights Reserved</p>
+    <p>
+        <a href="{% url 'policy' %}">Privacy Policy</a> | 
+        <a href="{% url 'terms' %}">Terms & Conditions</a>
+    </p>
 </footer>
 
 <script>

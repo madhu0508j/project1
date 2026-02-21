@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <title>Contact - Bright Future Coaching Institute</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- AOS Animate on Scroll Library -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
     <style>
+        /* Reset & Base */
         * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
         body { background: #f9f9f9; color: #333; scroll-behavior: smooth; }
 
@@ -57,10 +53,19 @@
 
         .contact-form label { display: block; margin-bottom: 8px; font-weight: bold; }
         .contact-form input, .contact-form textarea {
-            width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 12px; font-size: 16px;
+            width: 100%; 
+            padding: 14px; 
+            margin-bottom: 20px; 
+            border: 1px solid #ccc; 
+            border-radius: 12px; 
+            font-size: 16px;
             transition: 0.3s;
         }
-        .contact-form input:focus, .contact-form textarea:focus { border-color: #0077b6; outline: none; }
+        .contact-form input:focus, .contact-form textarea:focus { 
+            border-color: #0077b6; 
+            box-shadow: 0 0 8px rgba(0,119,182,0.3);
+            outline: none; 
+        }
 
         .contact-form button {
             background: linear-gradient(45deg, #00b4d8, #0077b6);
@@ -77,18 +82,61 @@
             transform: scale(1.05);
         }
 
-        /* Map Section */
-        .map-container { 
-            max-width: 700px; 
-            margin: 40px auto; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        /* Contact Info Section */
+        .contact-info { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 40px 50px; 
+            background: #eeeeee; 
+            border-radius: 10px; 
+            margin-top: 40px; 
+            flex-wrap: wrap;
         }
-        .map-container iframe { width: 100%; height: 350px; border: 0; }
+
+        .contact-info div { 
+            flex: 1 1 30%; 
+            margin: 10px; 
+            padding: 25px;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-info div:hover {
+            transform: scale(1.05);
+            background-color: #00b4d8;
+            color: white;
+        }
+
+        .contact-info h3 { 
+            font-size: 24px; 
+            margin-bottom: 15px; 
+            color: #0d1b2a; 
+        }
+
+        .contact-info p { 
+            font-size: 16px; 
+            margin-bottom: 10px; 
+            color: #333; 
+        }
+
+        .contact-info a {
+            color: #0077b6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #00b4d8;
+        }
 
         /* Footer */
         footer { background: #0d1b2a; color: white; text-align: center; padding: 15px; margin-top: 50px; }
+          footer a { color:#00b4d8; text-decoration:none; margin: 0 8px; transition:0.3s; }
+        footer a:hover { color:#ffffff; }
+
 
         /* Responsive */
         @media(max-width: 768px){
@@ -96,6 +144,8 @@
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
             section { padding: 40px 20px; }
+            .contact-info { flex-direction: column; align-items: center; }
+            .contact-info div { width: 80%; margin-bottom: 20px; }
         }
     </style>
 </head>
@@ -113,17 +163,18 @@
     </nav>
 </header>
 
-<section class="hero" data-aos="fade-down">
+<section class="hero">
     <div>
         <h1>Contact Us</h1>
         <p>We are here to answer your questions and guide your journey!</p>
     </div>
 </section>
 
-<section data-aos="fade-up">
+<section>
     <h2>Get in Touch</h2>
     <div class="contact-form">
         <form action="#" method="POST">
+            {% csrf_token %}
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
@@ -141,15 +192,31 @@
     </div>
 </section>
 
-
+<section class="contact-info">
+    <div>
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> contact@brightfuture.com</p>
+        <p><strong>Phone:</strong> +91 123 456 7890</p>
+    </div>
+    <div>
+        <h3>Social Media</h3>
+        <p>Follow us on:</p>
+        <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+    </div>
+    <div>
+        <h3>Working Hours</h3>
+        <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+        <p>Sunday: Closed</p>
+    </div>
+</section>
 
 <footer>
     <p>© 2026 Bright Future Coaching Institute | All Rights Reserved</p>
+    <p>
+        <a href="{% url 'policy' %}">Privacy Policy</a> | 
+        <a href="{% url 'terms' %}">Terms & Conditions</a>
+    </p>
 </footer>
-
-<script>
-  AOS.init({ duration: 1000 });
-</script>
 
 </body>
 </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions | Bright Future Coaching Institute</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+    body { background:#f4f6f8; color:#333; line-height:1.7; }
+
+    /* Compact Header & Navbar */
+    header {
+        background:#0d1b2a;
+        color:white;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:8px 30px;
+        position:sticky;
+        top:0;
+        z-index:1000;
+        box-shadow:0 2px 10px rgba(0,0,0,0.25);
+        border-bottom:2px solid #00b4d8;
+    }
+    .logo { font-size:18px; font-weight:bold; letter-spacing:1px; }
+
+    nav ul { list-style:none; display:flex; gap:10px; }
+    nav ul li a {
+        color:white; text-decoration:none; font-weight:bold; padding:5px 12px; border-radius:6px;
+        transition:all 0.3s ease; position:relative; font-size:14px;
+    }
+    nav ul li a::after {
+        content:""; position:absolute; left:0; bottom:0; width:0%; height:2px; background:#00b4d8; border-radius:2px; transition:0.3s;
+    }
+    nav ul li a:hover::after { width:100%; }
+    nav ul li a:hover { background:rgba(0,180,216,0.1); color:#00b4d8; transform:translateY(-1px); }
+    nav ul li a.active { background:#0077b6; color:white; box-shadow:0 3px 8px rgba(0,119,182,0.4); }
+
+    main {
+        max-width:900px; margin:50px auto; padding:35px 25px; background:white; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.07);
+    }
+    main h2 { color:#0077b6; font-size:28px; margin-bottom:20px; border-bottom:3px solid #00b4d8; padding-bottom:6px; }
+    main p { margin-bottom:16px; font-size:16px; line-height:1.7; color:#444; }
+    main p span { font-weight:bold; color:#0d1b2a; }
+    main a { color:#00b4d8; text-decoration:underline; transition:0.3s; }
+    main a:hover { color:#0077b6; }
+
+    footer { background:#0d1b2a; color:white; padding:20px 15px; text-align:center; margin-top:40px; font-size:14px; }
+
+    @media(max-width:768px){
+        header { flex-direction:column; align-items:flex-start; padding:10px 15px; }
+        nav ul { flex-direction:column; width:100%; gap:6px; margin-top:8px; }
+        nav ul li a { width:100%; text-align:center; padding:8px 0; font-size:14px; }
+        main { margin:30px 15px; padding:25px 15px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Bright Future Coaching Institute</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'admission' %}">Admission</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'refund' %}">Refund Policy</a></li>
+            <li><a href="{% url 'policy' %}">Privacy Policy</a></li>
+            <li><a href="{% url 'terms' %}" class="active">Terms & Conditions</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Terms & Conditions</h2>
+
+    <p>By using <span>Bright Future Coaching Institute</span> website and services, you agree to comply with our terms and conditions. All content, materials, and resources provided are for educational purposes only and cannot be used for unauthorized commercial purposes.</p>
+
+    <p>Enrollment and participation in our courses require adherence to rules, policies, and payment obligations. Any unauthorized use, reproduction, or sharing of our content without permission is strictly prohibited.</p>
+
+    <p>We reserve the right to update, modify, or revise our policies, courses, and website content at any time. Continued use of the website or services constitutes acceptance of these updates.</p>
+
+    <p>Students and parents are responsible for providing accurate information during registration. We maintain the right to deny access or enrollment if terms are violated.</p>
+
+    <p>For clarifications, please <a href="{% url 'contact' %}">contact us</a>. Your cooperation ensures a safe, professional, and high-quality learning experience.</p>
+</main>
+
+<footer>
+    © 2026 Bright Future Coaching Institute | All Rights Reserved
+</footer>
+
+</body>
+</html>

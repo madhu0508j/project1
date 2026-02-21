@@ -19,3 +19,9 @@ def contact(request):
 
 def policy(request):
     return render(request,'policy.html')
+
+def refund(request):
+    return render(request,'refund.html')
+
+def terms(request):
+    return render(request,'terms.html')

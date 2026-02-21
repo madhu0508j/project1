@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Instituteapp.views import show,about,Course,admission,contact,policy
+from Instituteapp.views import show,about,Course,admission,contact,policy,refund,terms
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,7 @@ urlpatterns = [
     path('courses/',Course,name='courses'),
     path('admission/',admission,name='admission'),
     path('contact/',contact,name='contact'),
-    path('Term&Policy/',policy,name='policy')
+    path('Term&Policy/',policy,name='policy'),
+    path('refund/',refund,name='refund'),
+    path('terms/',terms,name='terms')
 ]
